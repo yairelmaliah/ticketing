@@ -20,6 +20,7 @@ spec:
               value: mongodb://auth-mongo-srv:27017/auth
             - name: JWT_KEY
               value: asdf
+
             # - name: JWT_KEY
             #   valueFrom:
             #     secretKeyRef:
