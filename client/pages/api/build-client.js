@@ -1,13 +1,17 @@
 import axios from 'axios';
 
 export default ({ req }) => {
-  console.log(req.headers);
   if (typeof window === 'undefined') {
+    let baseURL;
+    if (req.headers.host === 'http://www.ticketing-app-yair.xyz') {
+      baseURL = 'http://www.ticketing-app-yair.xyz';
+    } else {
+      baseURL =
+        'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local';
+    }
     // We are on the server side
     return axios.create({
-      // baseURL:
-      // 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
-      baseURL: 'http://www.ticketing-app-yair.xyz',
+      baseURL,
       headers: req.headers,
     });
   } else {
