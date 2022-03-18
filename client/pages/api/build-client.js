@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export default ({ req }) => {
+  console.log(req.headers);
   if (typeof window === 'undefined') {
     // We are on the server side
     return axios.create({
