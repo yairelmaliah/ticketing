@@ -20,7 +20,7 @@ build:
     - image: yairelmaliah/client
       context: client
       docker:
-        dockerfile: Dockerfile.dev
+        dockerfile: Dockerfile
       sync:
         manual:
           - src: '**/*.js*'
