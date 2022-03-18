@@ -3,7 +3,10 @@ import axios from 'axios';
 export default ({ req }) => {
   if (typeof window === 'undefined') {
     let baseURL;
-    if (req.headers.host === 'http://www.ticketing-app-yair.xyz') {
+    if (
+      req.headers.host === 'www.ticketing-app-yair.xyz' ||
+      'ticketing-app-yair.xyz'
+    ) {
       baseURL = 'http://www.ticketing-app-yair.xyz';
     } else {
       baseURL =
